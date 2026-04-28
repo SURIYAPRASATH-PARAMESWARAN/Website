@@ -8,7 +8,7 @@ import LoadingScreen from '@/components/LoadingScreen'
 import CustomCursor from '@/components/CustomCursor'
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  const [loaded, setLoaded] = useState(false)
+  const [loaded, setLoaded] = useState(true)
   const pathname = usePathname()
   const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 })
