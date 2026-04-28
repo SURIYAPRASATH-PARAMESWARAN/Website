@@ -51,6 +51,7 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
     }))
     let raf: number
     function draw() {
+      if (!canvas) return
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       for (let i = 0; i < pts.length; i++) {
         const p = pts[i]
