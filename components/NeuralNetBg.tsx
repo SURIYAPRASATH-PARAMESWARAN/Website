@@ -34,6 +34,7 @@ export default function NeuralNetBg() {
     function gc(ci:number,a:number){const[r,g,b]=COLORS[ci%COLORS.length];return`rgba(${r},${g},${b},${a})`}
 
     function resize(){
+      if(!canvas) return
       dpr=Math.min(2,window.devicePixelRatio||1);W=window.innerWidth;H=window.innerHeight
       canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr)
       canvas.style.width=W+'px';canvas.style.height=H+'px'
