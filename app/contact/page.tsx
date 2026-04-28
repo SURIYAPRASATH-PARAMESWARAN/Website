@@ -11,8 +11,7 @@ export default function Contact() {
     e.preventDefault()
     setStatus('sending')
     try {
-      // Replace YOUR_FORM_ID with your actual Formspree ID
-      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const res = await fetch('https://formspree.io/f/mkoklkqj', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(form),
@@ -44,14 +43,13 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        {/* contact cards */}
         <div style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', gap:'1rem', marginBottom:'2.5rem' }}>
           {[
             { icon:'fa-solid fa-envelope', label:'Email', value:'suriyavictor6@gmail.com', href:'mailto:suriyavictor6@gmail.com' },
             { icon:'fa-solid fa-location-dot', label:'Location', value:'Leeds, UK', href: null },
           ].map(c => (
             <motion.div key={c.label}
-              whileHover={{ y:-3, borderColor:'rgba(201,168,76,0.25)' }}
+              whileHover={{ y:-3 }}
               style={{
                 display:'flex', gap:'1rem', alignItems:'center',
                 padding:'1.3rem 1.5rem', borderRadius:16,
@@ -73,7 +71,6 @@ export default function Contact() {
           ))}
         </div>
 
-        {/* form */}
         <motion.form
           initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }}
           transition={{ delay:0.2 }}
@@ -121,20 +118,15 @@ export default function Contact() {
             {status==='done' && <><i className="fa-solid fa-check" /> Message Sent!</>}
             {status==='error' && 'Error — try again'}
           </motion.button>
-
-          <p style={{ fontSize:'0.78rem', color:'rgba(240,242,247,0.3)', textAlign:'center', marginTop:'0.8rem' }}>
-            Powered by Formspree — replace <code style={{color:'#c9a84c'}}>YOUR_FORM_ID</code> in contact/page.tsx
-          </p>
         </motion.form>
 
-        {/* social */}
         <div style={{ display:'flex', justifyContent:'center', gap:'0.8rem', marginTop:'2rem', flexWrap:'wrap' }}>
           {[
             { icon:'fa-brands fa-github', label:'GitHub', href:'https://github.com/SURIYAPRASATH-PARAMESWARAN' },
             { icon:'fa-brands fa-linkedin-in', label:'LinkedIn', href:'https://www.linkedin.com/in/suriyaprasathp' },
           ].map(s => (
             <motion.a key={s.label} href={s.href} target="_blank" rel="noopener"
-              whileHover={{ y:-3, borderColor:'rgba(201,168,76,0.35)' }}
+              whileHover={{ y:-3 }}
               style={{
                 display:'inline-flex', alignItems:'center', gap:'0.55rem',
                 padding:'0.75rem 1.1rem', borderRadius:999,

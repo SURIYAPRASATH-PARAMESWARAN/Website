@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 
 const CERTS = [
   { title:'Certified Data Analyst', org:'Greens Technology', desc:'Certified proficiency in data science methodologies, machine learning algorithms, and statistical analysis.', date:'March 2024' },
+  { title:'AWS & DevOps', org:'Cloudzone', desc:'Hands-on training in AWS core services, CI/CD pipelines, infrastructure as code, containerisation, and DevOps automation workflows.', date:'September 2025' },
   { title:'Internet of Things (IoT)', org:'KaaShiv InfoTech', desc:'Certified in IoT architecture, sensor networks, real-time data processing, and embedded systems integration.', date:'February 2024' },
   { title:'Programming in C', org:'NIIT Limited', desc:'Certification in C programming fundamentals, memory management, and systems programming.', date:'2022' },
   { title:'AWS Academy Cloud Architecting', org:'Amazon Web Services', desc:'Graduate-level certification covering compute, storage, networking, security, and scalable cloud architecture.', date:'December 2024' },
@@ -19,7 +20,7 @@ export default function Certifications() {
           Certifications
         </motion.h1>
         <p style={{ textAlign:'center', color:'rgba(240,242,247,0.55)', marginBottom:'2.5rem', maxWidth:600, margin:'0 auto 2.5rem' }}>
-          Verified learning and practical training across data analytics, cloud architecture, IoT, and engineering tools.
+          Verified learning and practical training across data analytics, cloud architecture, DevOps, IoT, and engineering tools.
         </p>
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))', gap:'1.4rem' }}>
           {CERTS.map((c, i) => (
