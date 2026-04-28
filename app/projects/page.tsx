@@ -129,17 +129,14 @@ function ProjectCard({ p }: { p: typeof PROJECTS[0] }) {
       }}
       whileHover={{ y:-5 }}
     >
-      {/* spotlight */}
       <div style={{
         position:'absolute', inset:0, pointerEvents:'none', zIndex:0,
         background:`radial-gradient(220px circle at ${mx}% ${my}%, rgba(201,168,76,0.06), transparent 60%)`,
         opacity: hovered ? 1 : 0, transition:'opacity 0.3s',
       }} />
 
-      {/* banner */}
       <div style={{
-        background: p.bannerColor,
-        padding:'1rem 1.4rem',
+        background: p.bannerColor, padding:'1rem 1.4rem',
         display:'flex', alignItems:'center', justifyContent:'space-between',
         position:'relative', zIndex:1,
       }}>
@@ -165,39 +162,21 @@ function ProjectCard({ p }: { p: typeof PROJECTS[0] }) {
         <h2 style={{ fontFamily:'Syne', fontSize:'1.05rem', fontWeight:700, color:'#f0f2f7', marginBottom:'0.85rem', lineHeight:1.3 }}>
           {p.title}
         </h2>
-
         <div style={{ marginBottom:'0.75rem' }}>
-          <span style={{ fontSize:'0.68rem', fontWeight:700, letterSpacing:'0.1em', textTransform:'uppercase', color: p.bannerText, opacity:0.9 }}>
-            Problem
-          </span>
-          <p style={{ color:'rgba(240,242,247,0.75)', fontSize:'0.88rem', lineHeight:1.6, marginTop:'0.25rem', fontStyle:'italic' }}>
-            {p.problem}
-          </p>
+          <span style={{ fontSize:'0.68rem', fontWeight:700, letterSpacing:'0.1em', textTransform:'uppercase', color: p.bannerText, opacity:0.9 }}>Problem</span>
+          <p style={{ color:'rgba(240,242,247,0.75)', fontSize:'0.88rem', lineHeight:1.6, marginTop:'0.25rem', fontStyle:'italic' }}>{p.problem}</p>
         </div>
-
         <div style={{ marginBottom:'1.1rem', flex:1 }}>
-          <span style={{ fontSize:'0.68rem', fontWeight:700, letterSpacing:'0.1em', textTransform:'uppercase', color: p.bannerText, opacity:0.9 }}>
-            Solution
-          </span>
-          <p style={{ color:'rgba(240,242,247,0.6)', fontSize:'0.88rem', lineHeight:1.65, marginTop:'0.25rem' }}>
-            {p.solution}
-          </p>
+          <span style={{ fontSize:'0.68rem', fontWeight:700, letterSpacing:'0.1em', textTransform:'uppercase', color: p.bannerText, opacity:0.9 }}>Solution</span>
+          <p style={{ color:'rgba(240,242,247,0.6)', fontSize:'0.88rem', lineHeight:1.65, marginTop:'0.25rem' }}>{p.solution}</p>
         </div>
-
         <div style={{ display:'flex', flexWrap:'wrap', gap:'0.4rem', marginBottom:'1.1rem' }}>
           {p.tools.map(t => (
-            <span key={t} style={{
-              padding:'0.28rem 0.7rem', borderRadius:6,
-              fontFamily:'DM Sans', fontSize:'0.76rem', fontWeight:600,
-              background: p.bannerColor,
-              color: p.bannerText,
-              boxShadow:'0 1px 4px rgba(0,0,0,0.3)',
-            }}>
+            <span key={t} style={{ padding:'0.28rem 0.7rem', borderRadius:6, fontFamily:'DM Sans', fontSize:'0.76rem', fontWeight:600, background: p.bannerColor, color: p.bannerText, boxShadow:'0 1px 4px rgba(0,0,0,0.3)' }}>
               {t}
             </span>
           ))}
         </div>
-
         <a href={p.github} target="_blank" rel="noopener" style={{
           display:'inline-flex', alignItems:'center', gap:'0.5rem',
           padding:'0.58rem 0.9rem', borderRadius:10, fontSize:'0.84rem',
@@ -242,7 +221,6 @@ export default function Projects() {
           Production-style ML systems built around real business problems — not just accuracy scores.
         </motion.p>
 
-        {/* search */}
         <div style={{ marginBottom:'1.5rem', position:'relative', maxWidth:480 }}>
           <i className="fa-solid fa-magnifying-glass" style={{ position:'absolute', left:'1rem', top:'50%', transform:'translateY(-50%)', color:'rgba(201,168,76,0.5)', fontSize:'0.85rem' }} />
           <input
@@ -258,7 +236,6 @@ export default function Projects() {
           />
         </div>
 
-        {/* filters */}
         <div style={{ display:'flex', flexWrap:'wrap', gap:'0.6rem', marginBottom:'2.5rem' }}>
           {FILTERS.map(f => {
             const count = f.value === 'all' ? PROJECTS.length : PROJECTS.filter(p => p.tags.includes(f.value)).length
@@ -277,13 +254,13 @@ export default function Projects() {
           })}
         </div>
 
-        <motion.div layout style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(min(100%,380px),1fr))', gap:'1.5rem' }}>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(min(100%,380px),1fr))', gap:'1.5rem' }}>
           {visible.map((p,i) => (
-            <motion.div key={p.id} layout initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ delay:i*0.06 }}>
+            <motion.div key={p.id} initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ delay:i*0.06 }}>
               <ProjectCard p={p} />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
       <Footer />
     </div>
