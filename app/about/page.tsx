@@ -4,14 +4,26 @@ import Footer from '@/components/Footer'
 
 const EXPERIENCE = [
   {
-    company: 'Cognizant Technology Solutions',
-    location: 'Chennai, India',
-    role: 'ETL & Data Engineering Intern',
-    period: 'Jul 2022 – Dec 2022',
+    company: 'University of Leeds (MSc Dissertation)',
+    location: 'Leeds, UK',
+    role: 'Data Science Researcher',
+    period: 'Sep 2024 – Sep 2025',
     bullets: [
-      'Worked within enterprise ETL workflows using Informatica to clean, validate and standardise structured datasets used in downstream analytics and reporting.',
-      'Applied transformation rules and data validation checks to correct inconsistent records, handling missing values and ensuring reliable data formatting across multiple sources.',
-      'Assisted data engineering teams in monitoring ETL job runs, identifying data quality issues, and supporting fixes to maintain stable data pipelines.',
+      'Built a model classifying 29,000 cybersecurity vulnerabilities by severity using a fine-tuned SecBERT transformer, helping security teams prioritise which issues to fix first.',
+      'Compared multiple analytical approaches with isotonic calibration; the strongest hit F1 of 0.81 on the critical severity class, with built-in explainability showing why each item was flagged.',
+      'Shipped the final model as a Streamlit web app for end-user review, with experiment tracking in MLflow and automated testing across the training pipeline.',
+      'Maintained reproducible Python pipelines using sklearn, XGBoost, and PyTorch, with strict isolation of train, validation, and test data.',
+    ],
+  },
+  {
+    company: 'Self-Employed',
+    location: 'Remote, UK',
+    role: 'Freelance Data Analyst',
+    period: '2024 – Present',
+    bullets: [
+      'Built a Power BI inventory and sales dashboard for a family-owned grocery shop carrying 200+ products; the owner logs daily stock and sales, and the dashboard returns live profit, best-sellers, and a year-end performance summary.',
+      'Worked directly with a non-technical owner to translate reporting needs into a simple data-entry workflow with decision-ready output.',
+      'Maintained a lightweight data pipeline and refreshed the dashboard based on operational feedback over time.',
     ],
   },
   {
@@ -20,7 +32,7 @@ const EXPERIENCE = [
     role: 'IoT & Analytics Intern',
     period: 'Jan 2023 – Apr 2023',
     bullets: [
-      'Worked with a team analyzing IoT sensor data from industrial equipment to explore patterns related to machine performance and potential failures.',
+      'Worked with a team analysing IoT sensor data from industrial equipment to explore patterns related to machine performance and potential failures.',
       'Cleaned and preprocessed IoT sensor datasets using Python and SQL to support equipment performance analysis.',
       'Contributed to building basic dashboards and visualisations to track operational metrics and equipment performance.',
       'Supported the development of data ingestion and processing scripts used in internal analytics workflows.',
@@ -89,10 +101,10 @@ export default function About() {
             About Me
           </h1>
           <p style={{ maxWidth:640, fontSize:'1rem', color:'rgba(240,242,247,0.62)', marginBottom:'1rem', lineHeight:1.8, fontWeight:300 }}>
-            I&apos;m a Data Science and Analytics graduate from the University of Leeds, currently focused on machine learning, risk modelling, and building data systems that actually help people make better decisions.
+            I&apos;m a Data Science and Analytics graduate from the University of Leeds, currently focused on machine learning, retention and risk modelling, and building data systems that actually help people make better decisions.
           </p>
           <p style={{ maxWidth:640, fontSize:'1rem', color:'rgba(240,242,247,0.62)', lineHeight:1.8, fontWeight:300 }}>
-            I&apos;ve worked on projects spanning NLP, fraud detection, revenue forecasting, and churn analysis — mostly stuff where the goal is a useful output, not just a good accuracy score. I also have hands-on experience from internships in ETL engineering and IoT analytics.
+            My project work spans campaign ROI, churn and retention, fraud triage, NLP, and forecasting. The thread running through all of it is producing something a business can act on, not just a model with a good accuracy score. Alongside the projects I work as a freelance data analyst building Power BI tooling for a small retail business, and I previously interned in IoT analytics, handling sensor data from industrial equipment.
           </p>
         </motion.section>
 
