@@ -1,29 +1,18 @@
 'use client'
+
 import { motion } from 'framer-motion'
 import Footer from '@/components/Footer'
 
 const EXPERIENCE = [
   {
-    company: 'University of Leeds (MSc Dissertation)',
-    location: 'Leeds, UK',
-    role: 'Data Science Researcher',
-    period: 'Sep 2024 – Sep 2025',
-    bullets: [
-      'Built a model classifying 29,000 cybersecurity vulnerabilities by severity using a fine-tuned SecBERT transformer, helping security teams prioritise which issues to fix first.',
-      'Compared multiple analytical approaches with isotonic calibration; the strongest hit F1 of 0.81 on the critical severity class, with built-in explainability showing why each item was flagged.',
-      'Shipped the final model as a Streamlit web app for end-user review, with experiment tracking in MLflow and automated testing across the training pipeline.',
-      'Maintained reproducible Python pipelines using sklearn, XGBoost, and PyTorch, with strict isolation of train, validation, and test data.',
-    ],
-  },
-  {
-    company: 'Self-Employed',
+    company: 'Independent Projects',
     location: 'Remote, UK',
-    role: 'Freelance Data Analyst',
-    period: '2024 – Present',
+    role: 'Data Analyst',
+    period: 'Oct 2025 – Present',
     bullets: [
       'Built a Power BI inventory and sales dashboard for a family-owned grocery shop carrying 200+ products; the owner logs daily stock and sales, and the dashboard returns live profit, best-sellers, and a year-end performance summary.',
-      'Worked directly with a non-technical owner to translate reporting needs into a simple data-entry workflow with decision-ready output.',
-      'Maintained a lightweight data pipeline and refreshed the dashboard based on operational feedback over time.',
+      'Ranked 41,000 bank customers by expected profit in SQL to drive a fixed-capacity calling strategy; the top 1,000 converted at 77% against an 11.3% baseline.',
+      'Worked directly with non-technical owners to translate reporting needs into simple workflows with decision-ready output.',
     ],
   },
   {
@@ -57,7 +46,6 @@ function ExCard({ exp, i }: { exp: typeof EXPERIENCE[0]; i: number }) {
       }}
       className="card-hover"
     >
-      {/* timeline dot */}
       <div style={{
         position:'absolute', left:'-2.8rem', top:'2rem',
         width:12, height:12, borderRadius:'50%',
@@ -91,7 +79,6 @@ export default function About() {
   return (
     <div style={{ paddingTop:100 }}>
       <div className="page-section">
-        {/* about */}
         <motion.section
           initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }}
           transition={{ duration:0.6 }}
@@ -104,13 +91,11 @@ export default function About() {
             I&apos;m a Data Science and Analytics graduate from the University of Leeds, currently focused on machine learning, retention and risk modelling, and building data systems that actually help people make better decisions.
           </p>
           <p style={{ maxWidth:640, fontSize:'1rem', color:'rgba(240,242,247,0.62)', lineHeight:1.8, fontWeight:300 }}>
-            My project work spans campaign ROI, churn and retention, fraud triage, NLP, and forecasting. The thread running through all of it is producing something a business can act on, not just a model with a good accuracy score. Alongside the projects I work as a freelance data analyst building Power BI tooling for a small retail business, and I previously interned in IoT analytics, handling sensor data from industrial equipment.
+            My project work spans campaign ROI, churn and retention, fraud triage, NLP, and forecasting. The thread running through all of it is producing something a business can act on, not just a model with a good accuracy score. Alongside the projects I previously interned in IoT analytics, handling sensor data from industrial equipment. My MSc dissertation fine-tuned a SecBERT transformer to classify 29,000 cybersecurity vulnerabilities by severity, reaching 0.81 F1 on the critical class.
           </p>
         </motion.section>
 
-        {/* experience */}
         <section style={{ position:'relative', paddingLeft:'3rem' }}>
-          {/* timeline line */}
           <div style={{
             position:'absolute', top:0, bottom:0, left:'1.1rem', width:2,
             background:'linear-gradient(180deg,transparent,rgba(201,168,76,0.4),rgba(201,168,76,0.2),transparent)',
